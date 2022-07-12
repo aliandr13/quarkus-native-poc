@@ -1,4 +1,4 @@
-package com.quarkus.native.poc;
+package com.quarkus.poc;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -6,14 +6,14 @@ import javax.inject.Named;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
-@Named("unused")
-public class UnusedLambda implements RequestHandler<InputObject, OutputObject> {
+@Named("test")
+public class TestLambda implements RequestHandler<InputObject, OutputObject> {
 
     @Inject
     ProcessingService service;
 
     @Override
     public OutputObject handleRequest(InputObject input, Context context) {
-        throw new RuntimeException("Should be unused");
+        return service.process(input).setRequestId(context.getAwsRequestId());
     }
 }

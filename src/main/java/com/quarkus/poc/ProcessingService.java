@@ -1,4 +1,4 @@
-package com.quarkus.native.poc;
+package com.quarkus.poc;
 
 import javax.enterprise.context.ApplicationScoped;
 
