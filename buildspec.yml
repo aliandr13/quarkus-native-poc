@@ -11,7 +11,7 @@ phases:
       - echo $JAVA_HOME
       - echo $GRAALVM_HOME
 
-      - java --version
+#      - java --version
       - mvn --version
 #      - aws --version
 
@@ -20,7 +20,7 @@ phases:
       - echo $JAVA_HOME
       - echo $GRAALVM_HOME
 
-      - java --version
+#      - java --version
       - mvn --version
 #      - aws --version
 
