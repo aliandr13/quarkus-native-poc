@@ -1,0 +1,21 @@
+  AWSTemplateFormatVersion: '2010-09-09'
+  Transform: AWS::Serverless-2016-10-31
+  Description: AWS Serverless Quarkus - quarkus-native-poc-1.0-SNAPSHOT
+  Globals:
+    Api:
+      BinaryMediaTypes:
+        - "*/*"
+
+  Resources:
+    QuarkusNativePocNative:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: not.used.in.provided.runtime
+        Runtime: provided
+        CodeUri: s3://quarkus-poc-artifact/native/function.zip
+        MemorySize: 128
+        Policies: AWSLambdaBasicExecutionRole
+        Timeout: 15
+        Environment:
+          Variables:
+            DISABLE_SIGNAL_HANDLERS: true
