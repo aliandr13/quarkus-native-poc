@@ -26,8 +26,14 @@ phases:
 
       - ls target
 
+      - aws s3 cp target/function.zip s3://quarkus-poc-artifact/native/function.zip
 #      - aws cloudformation package --template-file app.cfn.yml  --s3-bucket $ASSETS_BUCKET_NAME --output-template-file app.out.yml
 #      - aws cloudformation deploy --template-file app.out.yml --stack-name $STACK_NAME --capabilities CAPABILITY_NAMED_IAM
   post_build:
     commands:
       - echo "Deployment DONE - $(date)"
+
+artifacts:
+  files:
+    - 'target/function.zip'
+  name: afunction.zip
