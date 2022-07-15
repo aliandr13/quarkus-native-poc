@@ -1,5 +1,8 @@
 package com.quarkus.poc;
 
+import lombok.ToString;
+
+@ToString
 public class InputObject {
 
     private String name;
