@@ -12,7 +12,7 @@
       Properties:
         Handler: not.used.in.provided.runtime
         Runtime: provided
-        CodeUri: s3://quarkus-poc-artifact/native/function.zip
+        CodeUri: s3://quarkus-poc-artifact/build-artifacts/target/function.zip
         MemorySize: 128
         Policies: AWSLambdaBasicExecutionRole
         Timeout: 15
