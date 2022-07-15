@@ -13,7 +13,7 @@ phases:
 
       - java --version
       - mvn --version
-      - aws --version
+#      - aws --version
 
       - mvn clean install -Pnative
       -
@@ -22,11 +22,11 @@ phases:
 
       - java --version
       - mvn --version
-      - aws --version
+#      - aws --version
 
       - ls target
       -
-      - aws s3 cp target/function.zip s3://quarkus-poc-artifact/native/function.zip
+#      - aws s3 cp target/function.zip s3://quarkus-poc-artifact/native/function.zip
   post_build:
     commands:
       - echo "Deployment DONE - $(date)"
